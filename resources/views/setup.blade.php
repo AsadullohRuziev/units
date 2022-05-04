@@ -14,3 +14,13 @@
 
 {{--jadval yaratish u-n table yaratib beradi--}}
 php artisan make:migration create_companies_table
+
+
+
+php artisan migrate  //dont work
+
+php artisan migrate:rollback  //orqaga qaytaradi
+
+
+
+

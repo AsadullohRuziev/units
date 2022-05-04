@@ -9,3 +9,8 @@
 
     dont fix that section
 </H1>
+
+{{--//////////////////////10////////////////////////--}}
+
+{{--jadval yaratish u-n table yaratib beradi--}}
+php artisan make:migration create_companies_table

@@ -48,7 +48,7 @@ Route::get('/user/{name?}', function ($name = null) {
 });
 */
 
-
+/*
 Route::get('/search', function (Request $request){  //So'rov yuborish  Requestsning belgisi ?(so'roq)
     $name = $request-> get('name', 'Salima'); //bular difault qiymat
     $age = $request-> get('age', 52);
@@ -58,4 +58,28 @@ Route::get('/search', function (Request $request){  //So'rov yuborish  Requestsn
 
 Route::get('/search', function (Request $request){
     return $request -> all(); //barcha elememtlarni qaytaradi JSON formatda
+});
+*/
+
+
+
+
+
+Route::group(['prefix'=>'dashboard'], function (){  //Routingda gruppalash
+    Route::get('/users', function (){
+        return "Users Dashboard";
+    });
+
+
+    Route::get('/statistic', function (){
+        return "Statistic Dashboard";
+    });
+    Route::get('/chat', function (){
+        return "Chat Dashboard";
+    });
+
+
+    Route::get('/me', function (){
+        return "Me Dashboard";
+    });
 });

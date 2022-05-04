@@ -9,6 +9,7 @@
     @endforeach
 </ul>
 <ul>
+    <strong>Bog'dagi mevalar ro'yxati</strong>
     @foreach($mevalar as $meva)
         <li>
             {{$meva}}

@@ -98,3 +98,8 @@ Route::get('/user/{name?}',[UserController::class, 'show']);  //UserControllerni
 //Single action controller php artisan make:controller <ShowProfileController> --invokable
 
 Route::get('/show/{id}', ShowProfileController::class); //Single action controllerda metod va massive kerak emas
+
+
+
+
+Route::get('/users',[UserController::class, 'list']); //foydalanuvchilarning ro'yxatini aks ettiradi

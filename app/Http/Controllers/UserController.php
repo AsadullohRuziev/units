@@ -11,8 +11,19 @@ class UserController extends Controller
        // return view('show');  //view folderning ichidagi show.blade.php filening manzilini ko'rsatyapti
 
 //        $name = 'Shaftoli';
-        return view('show',[
+        return view('show',[ //massive holatda yuborish
             "username" => $name
         ]); //name ozgaruvchisini viewga jo'natish
+    }
+    public function list()
+    {
+        $users = [
+          'Anora',
+          'Olmaxon',
+          'Behiboy',
+          'Shaptolixon',
+          'Lola'
+        ];
+         return view('list', compact('users'));  //compact uslubida yuborish
     }
 }

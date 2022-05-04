@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ShowProfileController;
+use App\Http\Controllers\HomeController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -103,3 +106,9 @@ Route::get('/show/{id}', ShowProfileController::class); //Single action controll
 
 
 Route::get('/users',[UserController::class, 'list']); //foydalanuvchilarning ro'yxatini aks ettiradi
+
+
+
+
+Route::get('/home',[HomeController::class, 'index']);
+Route::get('/members',[HomeController::class, 'members']);

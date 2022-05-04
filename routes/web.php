@@ -54,3 +54,8 @@ Route::get('/search', function (Request $request){  //So'rov yuborish  Requestsn
     $age = $request-> get('age', 52);
     return $name." ismli foydalanuchi inson ".$age." yoshda";
 });   //Requstda birnechta o'zgaruvch berilishi mumkin o'zgaruvchilarning orasini ajratish u-n &(ampersant) belgisidan foydalaniladi
+
+
+Route::get('/search', function (Request $request){
+    return $request -> all(); //barcha elememtlarni qaytaradi JSON formatda
+});

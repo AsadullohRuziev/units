@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,6 +36,9 @@ Route::get('/user/{name?}', function ($name = null) {
 */
 
 
+
+
+/*
 Route::get('/{action}/{name?}', function ($action, $name = null) {  //birnecha o'garuvchi olishi
     return $action.$name;
 });
@@ -41,3 +46,11 @@ Route::get('/{action}/{name?}', function ($action, $name = null) {  //birnecha o
 Route::get('/user/{name?}', function ($name = null) {
     return "Hello user ".$name;
 });
+*/
+
+
+Route::get('/search', function (Request $request){  //So'rov yuborish  Requestsning belgisi ?(so'roq)
+    $name = $request-> get('name', 'Salima'); //bular difault qiymat
+    $age = $request-> get('age', 52);
+    return $name." ismli foydalanuchi inson ".$age." yoshda";
+});   //Requstda birnechta o'zgaruvch berilishi mumkin o'zgaruvchilarning orasini ajratish u-n &(ampersant) belgisidan foydalaniladi

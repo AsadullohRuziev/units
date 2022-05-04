@@ -83,3 +83,7 @@ Route::group(['prefix'=>'dashboard'], function (){  //Routingda gruppalash
         return "Me Dashboard";
     });
 });
+
+
+
+// Controller hosil qilish  ( php artisan make:controller <UserController> )

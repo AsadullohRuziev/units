@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ShowProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -90,3 +91,10 @@ Route::group(['prefix'=>'dashboard'], function (){  //Routingda gruppalash
 
 
 Route::get('/user/{id?}',[UserController::class, 'show']);  //UserControllerni show metodiga murojat qilish
+
+
+
+
+//Single action controller php artisan make:controller <ShowProfileController> --invokable
+
+Route::get('/show/{id}', ShowProfileController::class); //Single action controllerda metod va massive kerak emas

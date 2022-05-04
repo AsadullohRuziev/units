@@ -90,7 +90,7 @@ Route::group(['prefix'=>'dashboard'], function (){  //Routingda gruppalash
 // Controller hosil qilish  ( php artisan make:controller <UserController> )
 
 
-Route::get('/user/{id?}',[UserController::class, 'show']);  //UserControllerni show metodiga murojat qilish
+Route::get('/user/{name?}',[UserController::class, 'show']);  //UserControllerni show metodiga murojat qilish
 
 
 

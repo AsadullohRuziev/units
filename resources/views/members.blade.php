@@ -3,5 +3,9 @@
 
 @section('title', 'AsadullohRuziev')
 
-{{--<h1>Hello from MEMBERS PAGE</h1>--}}
+@section('content')
+    @foreach($members as $member)
+        <h1>{{$member}}</h1>
+    @endforeach
+@endsection
 

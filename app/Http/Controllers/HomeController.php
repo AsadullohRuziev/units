@@ -12,6 +12,17 @@ class HomeController extends Controller
     }
     public  function members()
     {
-        return view('members');
+        $members = [
+            'Anora',
+            'Olmaxon',
+            'Behiboy',
+            'Shaptolixon',
+            'Lola'
+        ];
+        return view('members', compact('members'));
+    }
+    public  function about()
+    {
+        return view('about');
     }
 }

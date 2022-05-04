@@ -8,6 +8,6 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <h1>Hello from gardener </h1>
+   @yield('content')
 </body>
 </html>

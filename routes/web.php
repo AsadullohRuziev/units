@@ -21,7 +21,7 @@ Route::get('/assalom/{nom}',function ($nom){
 
 */
 
-
+/*
 Route::get('/hello/{name?}', function ($name = null) {
     return "Hello ".$name;
 });  //Global cheklov o'rnatildi
@@ -30,3 +30,14 @@ Route::get('/hello/{name?}', function ($name = null) {
 Route::get('/user/{name?}', function ($name = null) {
     return "Hello user ".$name;
 });   //Global cheklov o'rnatildi
+
+*/
+
+
+Route::get('/{action}/{name?}', function ($action, $name = null) {  //birnecha o'garuvchi olishi
+    return $action.$name;
+});
+
+Route::get('/user/{name?}', function ($name = null) {
+    return "Hello user ".$name;
+});

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,7 +63,7 @@ Route::get('/search', function (Request $request){
 
 
 
-
+/*
 
 Route::group(['prefix'=>'dashboard'], function (){  //Routingda gruppalash
     Route::get('/users', function (){
@@ -83,7 +83,10 @@ Route::group(['prefix'=>'dashboard'], function (){  //Routingda gruppalash
         return "Me Dashboard";
     });
 });
-
+*/
 
 
 // Controller hosil qilish  ( php artisan make:controller <UserController> )
+
+
+Route::get('/user/{id}',[UserController::class, 'show']);  //UserControllerni show metodiga murojat qilish

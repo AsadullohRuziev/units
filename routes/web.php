@@ -24,4 +24,9 @@ Route::get('/assalom/{nom}',function ($nom){
 
 Route::get('/hello/{name?}', function ($name = null) {
     return "Hello ".$name;
-})->where("name", "[a-zA-Z]+");  //cheklov o'rnatildi
+});  //Global cheklov o'rnatildi
+
+
+Route::get('/user/{name?}', function ($name = null) {
+    return "Hello user ".$name;
+});   //Global cheklov o'rnatildi

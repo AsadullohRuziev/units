@@ -19,7 +19,8 @@ class HomeController extends Controller
             'Shaptolixon',
             'Lola'
         ];
-        return view('members', compact('members'));
+        $people = [];
+        return view('members', compact('members', "people"));
     }
     public  function about()
     {

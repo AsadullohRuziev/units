@@ -11,8 +11,15 @@ class UserController extends Controller
        // return view('show');  //view folderning ichidagi show.blade.php filening manzilini ko'rsatyapti
 
 //        $name = 'Shaftoli';
-        return view('show',[ //massive holatda yuborish
-            "username" => $name
+        $mevalar = [
+            'Anor',
+            'Olma',
+            'Behi',
+            'Shaptoli'
+        ];
+        return view('users.show',[ //massive holatda yuborish
+            "username" => $name,
+            "mevalar" => $mevalar    //mana shunaqa holatda yana boshqa malumot yuborishimiz mumkin
         ]); //name ozgaruvchisini viewga jo'natish
     }
     public function list()
@@ -24,6 +31,12 @@ class UserController extends Controller
           'Shaptolixon',
           'Lola'
         ];
-         return view('list', compact('users'));  //compact uslubida yuborish
+        $mevalar = [
+            'Anor',
+            'Olma',
+            'Behi',
+            'Shaptoli'
+        ];
+         return view('users.list', compact('users', 'mevalar'));  //compact uslubida yuborish   // (,)vergul belgisini quyib va yana malumot yuborishimiz mumkin
     }
 }

@@ -8,5 +8,12 @@
          </li>
     @endforeach
 </ul>
+<ul>
+    @foreach($mevalar as $meva)
+        <li>
+            {{$meva}}
+        </li>
+    @endforeach
+</ul>
 </body>
 </html>

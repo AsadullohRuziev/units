@@ -45,3 +45,42 @@ bu model appning ichidagi model filaening ichida bo'ladi
 
 {{-- php artisan make:model Company--}}  modelning o'zini yaratish
 
+
+
+
+
+
+{{--/////////////////////////////////////////////////--}}
+
+factoriesning vazifasi sohta malumotlar generatsiya qiladi
+
+seederslar esa usha sohta malumotlarni malumotlat bazasiga qo'shiba beradi
+
+
+
+
+
+
+
+
+
+
+
+////factory hosil qilish
+php artisan make:factory CompanyFactory
+
+
+
+////seeder hosil qilish
+php artisan make:seed CompanySeeder
+
+
+
+
+
+controller yaratish
+php artisan make:controller CompaniesController  --resource
+
+
+natijani ko'rish uchun
+php artisan route:list

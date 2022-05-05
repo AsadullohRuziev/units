@@ -1,8 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <h1 class="text-center">Bu tashkilotlar ro'yxati</h1>
-<br>
-<table class="table table-bordered">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{{route('companies.create')}}">
+            <button class="btn btn-success" type="button">Tashkilot Qo'shish</button>
+        </a>
+
+    </div><br>
+
+    <table class="table table-bordered">
     <thead >
         <tr>
              <td>T/R</td>

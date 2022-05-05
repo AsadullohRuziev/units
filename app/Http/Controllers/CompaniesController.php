@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
@@ -44,7 +45,7 @@ class CompaniesController extends Controller
         $data = $request->validate([
            'name'=> 'required|min:5',  //minimal 5tadan kam bo'lmasin
             'address'=> 'required',
-            'phone'=>'required'
+            'phone'=> ['required','numeric',new PhoneNumber]
         ]);
         dd($data);
     }

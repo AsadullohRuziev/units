@@ -84,3 +84,12 @@ php artisan make:controller CompaniesController  --resource
 
 natijani ko'rish uchun
 php artisan route:list
+
+
+
+
+
+
+
+{{--////////////17////////////--}}
+php artisan make:rule PhoneNumber

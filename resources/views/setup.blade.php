@@ -23,4 +23,25 @@ php artisan migrate:rollback  //orqaga qaytaradi
 
 
 
+composerda chiqarildi
+
+
+
+
+
+model yaratish
+php artisan make:model
+
+
+model standatlari
+
+
+//  jadval nomi -  positions
+//  model nomi ->  Position
+
+{{-- php artisan make:model Position --migration--}}  model yasash migrate bilan birga yasab beradi
+bu model appning ichidagi model filaening ichida bo'ladi
+
+
+{{-- php artisan make:model Company--}}  modelning o'zini yaratish
 

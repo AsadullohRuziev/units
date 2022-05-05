@@ -37,9 +37,16 @@ class CompaniesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //formadan kelgan malumotlarni malumotlar bazasiga yozib quyish vazifasini bajaradi
     {
-        //
+        //     dd($request->all());
+
+        $data = $request->validate([
+           'name'=> 'required|min:5',  //minimal 5tadan kam bo'lmasin
+            'address'=> 'required',
+            'phone'=>'required'
+        ]);
+        dd($data);
     }
 
     /**

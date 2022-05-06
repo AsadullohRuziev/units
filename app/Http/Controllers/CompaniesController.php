@@ -15,10 +15,10 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $companies = Company::paginate(10);
+        $companies = Company::orderByDesc('created_at')->paginate(15);  //mana shu section ishlamadi
         //        dd($companies);
         return view('companies.index',[
-            'companies' => $companies
+            'companies' => $companies,
         ]);
     }
 
@@ -47,9 +47,15 @@ class CompaniesController extends Controller
             'address'=> 'required',
             'phone'=> ['required','numeric',new PhoneNumber]
         ]);
-        dd($data);
-    }
+//        dd($data);
 
+        $company = new Company;
+        $company->name = $data['name'];
+        $company -> address = $data['address'];
+        $company-> phone = $data['phone'];
+        $company->save();
+        return redirect()->route('companies.index');
+    }
     /**
      * Display the specified resource.
      *

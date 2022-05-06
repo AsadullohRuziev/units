@@ -64,9 +64,12 @@ class CompaniesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($company)
     {
-        //
+        $company = Company::find($company);
+        return view('companies.show',[
+            'company' => $company
+        ]);
     }
 
     /**

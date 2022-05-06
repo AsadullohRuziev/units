@@ -92,9 +92,15 @@ class CompaniesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Company $company)
     {
-        //
+        $data = $request->validate([
+            'name'=> 'required|min:5',
+            'address'=> 'required',
+            'phone'=> ['required','numeric',new PhoneNumber]
+        ]);
+        $company->update($data);
+        return redirect()->route('companies.index');
     }
 
     /**

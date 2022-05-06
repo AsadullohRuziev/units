@@ -12,7 +12,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-
+Route::resource('companies', CompaniesController::class)->middleware('auth');
 
 /*
 
@@ -117,7 +117,7 @@ Route::get('/about',[HomeController::class, 'about']);
 
 
 
-Route::resource('companies', CompaniesController::class);
+//Route::resource('companies', CompaniesController::class);
 
 Auth::routes();
 

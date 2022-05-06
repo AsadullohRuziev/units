@@ -42,15 +42,15 @@ class CompaniesController extends Controller
     {
         //     dd($request->all());
 
-        $data = $request->validate([
-           'name'=> 'required|min:5',  //minimal 5tadan kam bo'lmasin
-            'address'=> 'required',
-            'phone'=> ['required','numeric',new PhoneNumber]
-        ]);
+//        $data = $request->validate([
+//           'name'=> 'required|min:5',  //minimal 5tadan kam bo'lmasin
+//            'address'=> 'required',
+//            'phone'=> ['required','numeric',new PhoneNumber]
+//        ]);
 //        dd($data);
 //            $company = Company::create($data);
-//            dd($company);
-        Company::create($data);
+//            dd($this->validatedData());
+        Company::create($this->validatedData());   //new validate qoshildi sodda va oson and globalga o'xshashroq
 //        $company = new Company;
 //        $company->name = $data['name'];
 //        $company -> address = $data['address'];
@@ -94,12 +94,12 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        $data = $request->validate([
-            'name'=> 'required|min:5',
-            'address'=> 'required',
-            'phone'=> ['required','numeric',new PhoneNumber]
-        ]);
-        $company->update($data);
+//        $data = $request->validate([
+//            'name'=> 'required|min:5',
+//            'address'=> 'required',
+//            'phone'=> ['required','numeric',new PhoneNumber]
+//        ]);
+        $company->update($this->validatedData());
         return redirect()->route('companies.index');
     }
 
@@ -112,5 +112,13 @@ class CompaniesController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function validatedData()
+    {
+        return request()->validate([
+            'name'=> 'required|min:5',
+            'address'=> 'required',
+            'phone'=> ['required','numeric',new PhoneNumber]
+        ]);
     }
 }

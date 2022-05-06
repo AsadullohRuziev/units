@@ -64,9 +64,9 @@ class CompaniesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($company)
+    public function show( Company $company) // 404ning qisqartma usuli
     {
-        $company = Company::findOrFail($company);  // bunda sahifa topilmadi xatoligini beradi agar u sahifa yuq bo'lasa
+        //$company = Company::findOrFail($company);  // bunda sahifa topilmadi xatoligini beradi agar u sahifa yuq bo'lasa
         return view('companies.show',[
             'company' => $company
         ]);

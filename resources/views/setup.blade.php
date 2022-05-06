@@ -104,3 +104,7 @@ composer require laravel/ui   //install qilib olamiz
 php artisan ui bootstrap --auth  //install qilib olamiz  yes yes bosamiz
 
 npm install && npm run dev
+
+
+
+Thank you your watching

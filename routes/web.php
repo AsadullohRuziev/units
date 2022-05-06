@@ -69,6 +69,7 @@ Route::get('/search', function (Request $request){
 
 /*
 
+
 Route::group(['prefix'=>'dashboard'], function (){  //Routingda gruppalash
     Route::get('/users', function (){
         return "Users Dashboard";

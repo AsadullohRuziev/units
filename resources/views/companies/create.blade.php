@@ -19,17 +19,17 @@
     @csrf         {{--        //sahifadan chiqib ketayotganligini bildiradi--}}
             <div class="mb-3">
                 <label for="name" class="form-label">Tashkilot nomi</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}"> {{--   //{value} validatsiya qilganda malumot uchib ketmaydi--}}
             </div>
 
             <div class="mb-3">
                 <label for="address" class="form-label">Tashkilot manzili</label>
-                <input type="text" class="form-control" id="address"  name="address">
+                <input type="text" class="form-control" id="address"  name="address" value="{{old('address')}}">
             </div>
 
             <div class="mb-3">
                 <label for="phone" class="form-label">Tashkilot telefon raqami</label>
-                <input type="text" class="form-control" id="phone"  name="phone">
+                <input type="text" class="form-control" id="phone"  name="phone" value="{{old('phone')}}">
             </div>
 
             <button type="submit" class="btn btn-primary">Saqlash</button>

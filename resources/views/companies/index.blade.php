@@ -11,10 +11,10 @@
     <table class="table table-bordered">
     <thead >
         <tr>
-             <td>T/R</td>
-             <td>Tashkilot nomi</td>
-             <td>Tashkilot manzili</td>
-             <td>Tashkilot telefon raqami</td>
+             <th>T/R</th>
+             <th>Tashkilot nomi</th>
+             <th>Tashkilot manzili</th>
+             <th>Tashkilot telefon raqami</th>
         </tr>
     </thead>
     <tbody>

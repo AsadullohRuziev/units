@@ -6,24 +6,23 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public  function index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return view('app');
+        $this->middleware('auth');
     }
-    public  function members()
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-        $members = [
-            'Anora',
-            'Olmaxon',
-            'Behiboy',
-            'Shaptolixon',
-            'Lola'
-        ];
-        $people = [];
-        return view('members', compact('members', "people"));
-    }
-    public  function about()
-    {
-        return view('about');
+        return view('home');
     }
 }

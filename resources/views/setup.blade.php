@@ -93,3 +93,14 @@ php artisan route:list
 
 {{--////////////17////////////--}}
 php artisan make:rule PhoneNumber
+
+
+
+
+
+////23/////
+composer require laravel/ui   //install qilib olamiz
+
+php artisan ui bootstrap --auth  //install qilib olamiz  yes yes bosamiz
+
+npm install && npm run dev

@@ -118,3 +118,7 @@ Route::get('/about',[HomeController::class, 'about']);
 
 
 Route::resource('companies', CompaniesController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

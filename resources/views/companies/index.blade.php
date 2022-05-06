@@ -27,7 +27,14 @@
                 </td>
                 <td>{{$company-> address}}</td>
                 <td>{{$company-> phone}}</td>
-                <td><a href="{{route('companies.edit',['company'=>$company->id])}}" class="btn btn-info"><i class="bi bi-pencil-square"></i></a></td>
+                <td>
+                    <a href="{{route('companies.edit',['company'=>$company->id])}}" class="btn btn-info"><i class="bi bi-pencil-square"></i></a>
+                    <form action="{{route('companies.destroy',['company'=>$company->id])}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
+                </td>
             </tr>
             @endforeach
     </tbody>

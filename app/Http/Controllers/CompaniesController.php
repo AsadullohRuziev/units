@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SaveCompanyRequest;
 use App\Models\Company;
 use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
@@ -29,7 +30,10 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        return view('companies.create');
+        $company = new Company();
+        return view('companies.create',[
+            'company'=>$company
+        ]);
     }
 
     /**
@@ -38,7 +42,7 @@ class CompaniesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) //formadan kelgan malumotlarni malumotlar bazasiga yozib quyish vazifasini bajaradi
+    public function store(SaveCompanyRequest $request) //formadan kelgan malumotlarni malumotlar bazasiga yozib quyish vazifasini bajaradi
     {
         //     dd($request->all());
 
@@ -50,7 +54,7 @@ class CompaniesController extends Controller
 //        dd($data);
 //            $company = Company::create($data);
 //            dd($this->validatedData());
-        Company::create($this->validatedData());   //new validate qoshildi sodda va oson and globalga o'xshashroq
+        Company::create($request->validated());   //new validate qoshildi sodda va oson and globalga o'xshashroq
 //        $company = new Company;
 //        $company->name = $data['name'];
 //        $company -> address = $data['address'];
@@ -92,14 +96,14 @@ class CompaniesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(SaveCompanyRequest $request, Company $company)
     {
 //        $data = $request->validate([
 //            'name'=> 'required|min:5',
 //            'address'=> 'required',
 //            'phone'=> ['required','numeric',new PhoneNumber]
 //        ]);
-        $company->update($this->validatedData());
+        $company->update($request->validated());
         return redirect()->route('companies.index');
     }
 

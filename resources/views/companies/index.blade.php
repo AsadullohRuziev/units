@@ -14,7 +14,8 @@
              <th>T/R</th>
              <th>Tashkilot nomi</th>
              <th>Tashkilot manzili</th>
-             <th>Tashkilot telefon raqami</th>
+            <th>Tashkilot telefon raqami</th>
+            <th>Amallar</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@
                 </td>
                 <td>{{$company-> address}}</td>
                 <td>{{$company-> phone}}</td>
+                <td><a href="{{route('companies.edit',['company'=>$company->id])}}" class="btn btn-info"><i class="bi bi-pencil-square"></i></a></td>
             </tr>
             @endforeach
     </tbody>

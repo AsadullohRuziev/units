@@ -78,9 +78,11 @@ class CompaniesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Company $company)
     {
-        //
+        return view('companies.edit',[
+            'company'=>$company
+        ]);
     }
 
     /**

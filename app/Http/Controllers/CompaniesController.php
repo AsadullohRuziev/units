@@ -66,7 +66,7 @@ class CompaniesController extends Controller
      */
     public function show($company)
     {
-        $company = Company::find($company);
+        $company = Company::findOrFail($company);  // bunda sahifa topilmadi xatoligini beradi agar u sahifa yuq bo'lasa
         return view('companies.show',[
             'company' => $company
         ]);
